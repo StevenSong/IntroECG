@@ -39,6 +39,11 @@ Timothy J. Poterucha, Linyuan Jing, Ramon Pimentel Ricart, Michael Adjei-Mosi, J
 
 > PhysioNet dataset coming soon
 
+## 8-CADNet ATTR Model
+
+> Coming soon
+
+
 ## Development Team
 Lead Developers:<br>
 [-Pierre Elias](https://twitter.com/PierreEliasMD)<br>
