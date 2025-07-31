@@ -132,7 +132,7 @@ class ResNet1dWithTabular(nn.Module):
 
     def forward(self, x_and_tabular: Tuple[torch.Tensor, torch.Tensor]) -> torch.Tensor:
         x, tabular = x_and_tabular
-        
+
         # Change the shape of x to be adopted for the model input
         # Prior to transpose and squeeze, expect model input size to be [BATCH_SIZE, 1, FEATURE_SIZE, 12]
         x = torch.transpose(x, 2, 3)

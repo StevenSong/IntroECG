@@ -9,12 +9,16 @@ This code is intended for peer review purposes only and is not suitable for clin
 8-CADNet ATTR Model/
 ├── run_cadnet_inference.py         # Main script to run inference
 ├── utils.py                        # Preprocessing and utility functions
-├── model.py                        # Model definition: ResNet1d with tabular input
-├── sample_data/
-│   └── example_input.npy           # Example input data
-├── requirements.txt                # Python dependencies
+├── model.py                        # Model definition: ResNet1d with tabular 
+├── configs.py                      # Model configuration and feature column definitions  
+├── pyproject.toml                  # Python dependencies
 └── README.md                       # Project documentation
 ```
+
+## Environment 
+For python environment managemnent we use [uv](https://docs.astral.sh/uv/):
+- dependencies are in the `pyproject.toml` file
+- run `uv sync` to install the virtual environment
 
 # Feature Specification: `cadnet_model_features`
 
@@ -53,8 +57,10 @@ The model expects a structured input table with the following features, derived 
 
 ## Waveform Path
 - `processed_ecg_blob_path`: Path to preprocessed ECG waveform blob
+    > baseline wander removal has already been applied to processed ECG arrays
+- `waveform_array`: NumPy array containing 12 lead ECG of shape (12, 2500, 1)
 
 ## Comorbidity Flags
-- `carpal_tunnel_syndrome`
-- `lumbar_spine_stenosis`
-- `degenerative_joint_disease`
+- `carpal_tunnel_syndrome`: Binary flag (0  or 1)
+- `lumbar_spine_stenosis`: Binary flag (0  or 1)
+- `degenerative_joint_disease`: Binary flag (0  or 1)
