@@ -20,6 +20,17 @@ For python environment managemnent we use [uv](https://docs.astral.sh/uv/):
 - dependencies are in the `pyproject.toml` file
 - run `uv sync` to install the virtual environment
 
+## Model Assets
+
+To run the CADNet inference pipeline, specific model assets are required and must be located in the designated directory structure. These model assets are proprietary and are not distributed with this repository. 
+
+The following files are expected to be present in the `ml/cadnet/cadnet_non_vent_paced/versions/2/` directory:
+
+*   `ecg_preprocessing_pipeline.joblib`: Preprocessing pipeline for ECG tabular features.
+*   `echo_preprocessing_pipeline.joblib`: Preprocessing pipeline for echo tabular features.
+*   `ecg_waveform_preprocessing_params.json`: Truncation and normalization parameters for ECG waveforms.
+*   `weights.pt`: Trained PyTorch model weights.
+
 # Feature Specification: `cadnet_model_features`
 
 The model expects a structured input table with the following features, derived from ECG and echocardiographic studies:
