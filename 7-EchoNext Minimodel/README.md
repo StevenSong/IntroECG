@@ -1,5 +1,7 @@
 # EchoNext model inference 
 
+The notebook [EchoNext_Mini_example.ipynb](https://github.com/PierreElias/IntroECG/blob/master/7-EchoNext%20Minimodel/EchoNext_Mini_example.ipynb) contains examples of loading the EchoNext-Mini dataset and evaluating the outputs of the model.
+
 # I. Input preparation
 
 All xmls are expected in a flat folder in a single directory with `*.xml` file names along with a file named `labels.csv`. The names of the xml files will be condsidered the ecg_id. The labels.csv file should include a header and have one row for each file with a ecg_id column(xml file name without extension) followed by these 12 binary labels:
@@ -16,7 +18,7 @@ All xmls are expected in a flat folder in a single directory with `*.xml` file n
    - tr_max_gte_32
    - shd
 
-   > **Note**: If the xml data has already been preprocessed into numpy waveform and feature arrays, as is the case with the [PhysioNet: Detecting structural heart disease with ECGs using the EchoNext model](<link to be added>) dataset, skip to step C. to run inference.
+   > **Note**: If the xml data has already been preprocessed into numpy waveform and feature arrays, as is the case with the [PhysioNet: Detecting structural heart disease with ECGs using the EchoNext model](https://physionet.org/content/echonext) dataset, skip to step C. to run inference.
 
 ## II. Docker and All-in-One Command
 
